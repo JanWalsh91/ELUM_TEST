@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 11:11:14 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 12:32:28 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/10 17:49:37 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,17 @@ t_data 	*init_data(int ac, char **av) {
 		error_exit("malloc error.");
 	// store desired result
 	data->result = atoi(av[ac - 1]);
-	// printf("parsed result: %d\n", data->result);
+	printf("parsed result: %d\n", data->result);
 	// init num list and in_use
 	init_num_list(data, ac, av);
-	// printf("parsed numbers:\n");
-	// for (int i = 0; i < data->num_count; i++) {
-	// 	printf("- %d -", data->num_list[i]);
-	// }
-	// printf("\n");
+	printf("parsed numbers:\n");
+	for (int i = 0; i < data->num_count; i++) {
+		printf("- %d -", data->num_list[i]);
+	}
+	printf("\n");
 	init_expr(data);
+	data->error = 0;
+	// exit(0);
 	return (data);
 }
 
@@ -51,7 +53,7 @@ static void	init_num_list(t_data *data, int ac, char **av) {
 	// add verification for out of range numbers
 	for (int i = 1; i < ac - 1; i++) {
 		data->num_list[i - 1] = atoi(av[i]);
-		data->in_use[i - 1] = false;
+		data->in_use[i - 1] = true;
 	}
 }
 

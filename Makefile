@@ -6,7 +6,7 @@
 #    By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/10 09:49:09 by jwalsh            #+#    #+#              #
-#    Updated: 2017/08/10 12:56:57 by jwalsh           ###   ########.fr        #
+#    Updated: 2017/08/10 16:13:14 by jwalsh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = 		main \
 			is_rpn_valid \
 			calc_rpn \
 			do_op \
+			increment_expression \
 			error_exit \
 			debug
 
