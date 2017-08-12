@@ -6,11 +6,11 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 11:40:11 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 13:14:07 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:12:48 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 static t_list	*init_link(t_sym *sym);
 static void		append_to_list(t_list **head, t_list *new_link);

@@ -6,11 +6,11 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 11:11:14 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 13:42:40 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:38:06 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 static void	init_num_list(t_data *data, int ac, char **av);
 static void	init_expr(t_data *data);
@@ -22,13 +22,10 @@ static void	init_expr(t_data *data);
 t_data 	*init_data(int ac, char **av) {
 
 	t_data *data;
-	// init data structure
 	if (!(data = (t_data *)malloc(sizeof(t_data))))
 		error_exit("malloc error.");
-	// store desired result
 	data->result = atoi(av[ac - 1]);
 	printf("parsed result: %d\n", data->result);
-	// init num list and in_use
 	init_num_list(data, ac, av);
 	printf("parsed numbers:\n");
 	for (int i = 0; i < data->num_count; i++) {
@@ -37,20 +34,16 @@ t_data 	*init_data(int ac, char **av) {
 	printf("\n");
 	init_expr(data);
 	data->error = 0;
-	
 	return (data);
 }
 
 static void	init_num_list(t_data *data, int ac, char **av) {
 
 	data->num_count = ac - 2;
-	// init num_list
 	if (!(data->num_list = (int *)malloc((data->num_count) * sizeof(int))))
 		error_exit("Malloc error.");
-	// init in_use
 	if (!(data->in_use = (bool *)malloc(sizeof(bool) * data->num_count)))
 		error_exit("malloc error.");
-	// add verification for out of range numbers
 	for (int i = 1; i < ac - 1; i++) {
 		data->num_list[i - 1] = atoi(av[i]);
 		data->in_use[i - 1] = true;

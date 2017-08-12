@@ -8,12 +8,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "lceb.h"
+
 /*
 ** Concatenates s1 and s2 in a new string which was allocated enough memory
 ** with malloc. Returns a pointer to that new string.
 */
-
-# include "../inc/lceb.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

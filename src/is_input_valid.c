@@ -6,34 +6,37 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 10:21:41 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 13:15:14 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:42:12 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 /*
-** Input is invalid if the number of arguments is less than 4 or
-** if any char is not a digit.
+** Checks for the validity of user input. Invalid if: 
+** - there are less than 3 arguments.
+** - there are any negative or null numbers.
+** - if any characters are not digits.
 */
 
 bool	is_input_valid(int ac, char **av) {
 
-	int	i;
-	int	y;
-
 	if (ac < 4) {
-		error_exit("not enough arguments.");
+		error_exit("please provide at least 3 arguments.");
 		return (false);
 	}
-	for (i = 1; i < ac; i++) {
+	for (int i = 1; i < ac; i++) {
 		if (atoi(av[i]) == 0) {
 				error_exit("only strictly positive integers allowed.");
 				return (false);
 			}
-		for (y = 0; y < (int)strlen(av[i]); y++) {
+		if (atoi(av[i]) != atol(av[i])) {
+				error_exit("input numbers must be less than INT_MAX.");
+				return (false);
+		}
+		for (int y = 0; y < (int)strlen(av[i]); y++) {
 			if (!isdigit(av[i][y])) {
-				error_exit("non-digit character found.");
+				error_exit("input characters must be composed of digits only.");
 				return (false);
 			}
 		}

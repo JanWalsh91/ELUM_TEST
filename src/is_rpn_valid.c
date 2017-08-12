@@ -6,14 +6,20 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 11:55:00 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 18:21:36 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:42:23 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 /* 
-** Checks for the validity of the RNP (Reverse Polish Notation) expression
+** Checks for the validity of the RNP (Reverse Polish Notation) expression.
+** - All numbers must be used.
+** - The difference between the number of operands and operators must not
+**   be lower than 0 evaluated anywhere throughout the expression.
+** - The total difference between the number of operands and operators must
+**   be 1.
+** Returns true if the expression is valid, false if the expression is invalid.
 */
 
 bool	is_rpn_valid(t_data *data) {
@@ -21,27 +27,21 @@ bool	is_rpn_valid(t_data *data) {
 	int counter = 0;
 	int i;
 	
-	// print_exprgit adession(data);
-	// check that all numbers are used in exression
 	for (i = 0; i < data->num_count; i++) {
 		if (!data->in_use[i]) {
-			// printf("rpn invalid. 1 \n");
 			return (false);
 		}
 	}
-	// check that the rpn expression is valid
 	for (i = 0; i < data->expr_length; i++) {
 		if (data->expr[i].type == T_NUMBER)
 			counter++;
 		else if (data->expr[i].type == T_OPERATOR) {
 			counter = counter - 2;
 			if (counter < 0) {
-				// printf("rpn invalid. 2\n");
 				return (false);
 			}
 			counter++;
 		}
 	}
-	// counter == 1 ? printf("rpn valid.\n") : printf("rpn invalid. 3\n");
 	return (counter == 1);
 }

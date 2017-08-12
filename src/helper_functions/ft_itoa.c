@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 11:50:25 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 12:37:14 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:07:43 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** If memory allocation fails, return NULL.
 */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 char	*ft_itoa(int n)
 {

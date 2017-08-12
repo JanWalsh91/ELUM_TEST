@@ -6,11 +6,11 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:55:34 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 11:39:31 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:12:10 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
+#include "lceb.h"
 
 /*
 ** Debug functions

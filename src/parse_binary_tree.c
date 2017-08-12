@@ -6,17 +6,18 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 12:27:09 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 13:47:27 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:42:29 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../inc/lceb.h"
-static void	build_equation(t_list *node, char **string);
+#include "lceb.h"
+
+static void		build_equation(t_list *node, char **string);
 static void		open_parentheses(t_list *node, char **string);
 static void		close_parentheses(t_list *node, char **string);
 
 /*
-** In-order binary tree traversal.
+** Traverses the binary tree (in-order traversal) to build the equation.
 */
 
 void		parse_binary_tree(t_list *node, char **string) {
@@ -34,6 +35,10 @@ void		parse_binary_tree(t_list *node, char **string) {
 	}
 }
 
+/*
+** Concatenates the next operator or value.
+*/
+
 static void	build_equation(t_list *node, char **string) {
 	printf("building equation: ");
 	if (node->op == '0') {
@@ -46,6 +51,10 @@ static void	build_equation(t_list *node, char **string) {
 	}
 	*string = ft_strjoinfree(*string, " ", 'l');
 }
+
+/*
+** Adds an open parenthese if necessary.
+*/
 
 static void		open_parentheses(t_list *node, char **string) {
 	printf("check for open parethenses: node->op: %c, node->prev: %p", node->op, node->prev);
@@ -77,6 +86,10 @@ static void		open_parentheses(t_list *node, char **string) {
 	}
 	printf("\n");
 }
+
+/*
+** Adds a close parenthese if necessary.
+*/
 
 static void		close_parentheses(t_list *node, char **string) {
 	if (node->op != '0' && node->prev && node->prev->op != '0') {
