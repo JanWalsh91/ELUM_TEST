@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 10:21:41 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 14:42:12 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:54:32 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 /*
 ** Checks for the validity of user input. Invalid if: 
-** - there are less than 3 arguments.
+** - there are less than 3 numbers.
+** - there are more than 8 numbers.
 ** - there are any negative or null numbers.
 ** - if any characters are not digits.
 */
@@ -22,7 +23,11 @@
 bool	is_input_valid(int ac, char **av) {
 
 	if (ac < 4) {
-		error_exit("please provide at least 3 arguments.");
+		error_exit("please provide at least 3 numbers.");
+		return (false);
+	}
+	if (ac > 10) {
+		error_exit("Please provide no more than 9 numbers.");
 		return (false);
 	}
 	for (int i = 1; i < ac; i++) {

@@ -6,7 +6,7 @@
 #    By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/10 09:49:09 by jwalsh            #+#    #+#              #
-#    Updated: 2017/08/12 14:31:30 by jwalsh           ###   ########.fr        #
+#    Updated: 2017/08/12 14:55:10 by jwalsh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,6 @@ SRC = 		main \
 			is_rpn_valid \
 			calc_rpn \
 			increment_expression \
-			error_exit \
 			convert_from_rpn \
 			init_linked_list \
 			build_binary_tree \
@@ -31,6 +30,7 @@ HELPER = 	do_op \
 			ft_itoa \
 			ft_strjoin \
 			ft_strjoinfree \
+			error_exit \
 			debug
 
 OBJ_DIR = obj
