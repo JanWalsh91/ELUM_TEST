@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 09:54:33 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 14:42:25 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 15:00:27 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ int		main(int ac, char **av) {
 		final_equation = convert_from_rpn(data);
 		final_equation = ft_strjoinfree(final_equation, "= ", 'l');
 		final_equation = ft_strjoinfree(final_equation, ft_itoa(data->result), 'l');
-		printf("solution: %s\n", final_equation);
+		printf("%s\n", final_equation);
 	} else {
-		printf("solution not found.\n");
+		printf("No solution.\n");
 	}
 	return (0);
 }

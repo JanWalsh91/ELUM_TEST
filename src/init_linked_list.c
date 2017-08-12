@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/12 11:40:11 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/12 14:12:48 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 14:59:13 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void		append_to_list(t_list **head, t_list *new_link);
 */
 
 t_list	*init_linked_list(t_data *data) {
-	// printf("init_linked_list\n");
+
 	t_list	*head;
 	
 	head = NULL;
@@ -35,7 +35,7 @@ t_list	*init_linked_list(t_data *data) {
 */
 
 static t_list	*init_link(t_sym *sym) {
-	// printf("init_link\n");
+
 	t_list	*new_link;
 
 	new_link = NULL;
@@ -64,7 +64,7 @@ static t_list	*init_link(t_sym *sym) {
 */
 
 static void	append_to_list(t_list **head, t_list *new_link) {
-	// printf("append_to_list\n");
+
 	t_list *ptr;
 
 	ptr = *head;
