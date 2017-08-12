@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:55:34 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 16:17:06 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 11:39:31 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Debug functions
 */
 
-void print_expression(t_data *data) {
+void	print_expression(t_data *data) {
 	printf("expression: ");
 	for (int i = 0; i < data->expr_length; i++) {
 		if (data->expr[i].type == T_NUMBER)
@@ -25,4 +25,21 @@ void print_expression(t_data *data) {
 			printf("%c ", data->expr[i].op);
 	}
 	printf("= %d\n", data->result);
+}
+
+void	print_linked_list(t_list **head) {
+	printf("linked list: ");
+	t_list *ptr;
+
+	ptr = *head;
+	while (ptr) {
+		if (ptr->value) {
+			printf("%d ", ptr->value);
+		}
+		else {
+			printf("%c ", ptr->op);
+		}
+		ptr = ptr->next;
+	}
+	printf("\n");
 }

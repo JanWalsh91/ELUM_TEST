@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 11:55:00 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 17:50:57 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/10 18:21:36 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ bool	is_rpn_valid(t_data *data) {
 	int counter = 0;
 	int i;
 	
-	// print_expression(data);
+	// print_exprgit adession(data);
 	// check that all numbers are used in exression
 	for (i = 0; i < data->num_count; i++) {
 		if (!data->in_use[i]) {

@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 10:21:41 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 11:21:26 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 13:15:14 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ bool	is_input_valid(int ac, char **av) {
 		return (false);
 	}
 	for (i = 1; i < ac; i++) {
+		if (atoi(av[i]) == 0) {
+				error_exit("only strictly positive integers allowed.");
+				return (false);
+			}
 		for (y = 0; y < (int)strlen(av[i]); y++) {
 			if (!isdigit(av[i][y])) {
 				error_exit("non-digit character found.");

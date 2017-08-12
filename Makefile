@@ -6,7 +6,7 @@
 #    By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/08/10 09:49:09 by jwalsh            #+#    #+#              #
-#    Updated: 2017/08/10 16:13:14 by jwalsh           ###   ########.fr        #
+#    Updated: 2017/08/12 12:37:53 by jwalsh           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,13 @@ SRC = 		main \
 			do_op \
 			increment_expression \
 			error_exit \
+			ft_strjoin \
+			ft_strjoinfree \
+			ft_itoa \
+			convert_from_rpn \
+			init_linked_list \
+			build_binary_tree \
+			parse_binary_tree \
 			debug
 
 OBJ_DIR = obj

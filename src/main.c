@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 09:54:33 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 17:49:51 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 12:51:15 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int		main(int ac, char **av) {
 
 	t_data	*data = NULL;
+	char	*final_equation =  NULL;
 
 	if (is_input_valid(ac, av))
 		data = init_data(ac, av);
@@ -53,6 +54,12 @@ int		main(int ac, char **av) {
 	}
 	printf("solution: ");
 	solution ? print_expression(data) : printf("solution not found.\n");
+	if (solution) {
+		final_equation = convert_from_rpn(data);
+		final_equation = ft_strjoinfree(final_equation, "= ", 'l');
+		final_equation = ft_strjoinfree(final_equation, ft_itoa(data->result), 'l');
+		printf("solution: %s\n", final_equation);
+	}
 	return (0);
 }
 

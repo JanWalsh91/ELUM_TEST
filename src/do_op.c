@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 12:21:11 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 17:48:53 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 12:06:27 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int	do_op(int a, char op, int b, int *error) {
 			return (a * b);
 		case '/':
 		if (b == 0) {
-				*error = 1;
+				if (error) *error = 1;
 				// printf("error: 1: %d / %d\n", a, b);
 				return (a);
 			}
 			if (a % b != 0) {
-				*error = 2;
+				if (error) *error = 2;
 				// printf("error: 2: %d / %d\n", a, b);
 				return (a);
 			}
