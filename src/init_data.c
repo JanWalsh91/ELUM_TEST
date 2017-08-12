@@ -6,7 +6,7 @@
 /*   By: jwalsh <jwalsh@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/08/10 11:11:14 by jwalsh            #+#    #+#             */
-/*   Updated: 2017/08/10 17:49:37 by jwalsh           ###   ########.fr       */
+/*   Updated: 2017/08/12 13:42:40 by jwalsh           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_data 	*init_data(int ac, char **av) {
 	printf("\n");
 	init_expr(data);
 	data->error = 0;
-	// exit(0);
+	
 	return (data);
 }
 
