@@ -19,5 +19,7 @@ The program must use all the numbers and basic operators ( + ,  - ,  \* ,  / ) a
 
 My methodology:
 
-Use reverse polish notation (RPN) and backtacking to determine a valid solution if one exists.
+Use Reverse Polish Notation (RPN) and backtacking to determine a valid solution if one exists.
 Transform the RPN expression using a binary tree into a normal mathematical expression.
+
+Please note: I am using an older version of gcc at school, error flags may not find all the errors that are found in more recent versions.
